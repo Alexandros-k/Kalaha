@@ -1,0 +1,78 @@
+<main class="Content">
+
+  <div class="Info">
+    <h1 style="text-align: center">Kalaha - Board Game</h1>
+  </div>
+
+  <div class="GameContainer">
+
+    <div id="fetchbtn">
+      <button type="button" class="btn btn-outline-success" (click)="startGame(playerTurn);">Start Game</button>
+    </div>
+    <div><small class="text-info">Click the button to Start a new Game of Kalaha</small></div>
+
+    <div class="players-two">
+      <div class="UI-Element Player2Score Player P2">
+        <span [class.activePlayerIndicator]="playerTurn == 'p2'"
+              style="padding-left: 40px;padding-right: 40px">Player 2</span></div>
+
+              <div>score: {{p2ScoreNumber}}</div>
+    </div>
+
+    <div class="Spawner">
+    </div>
+
+    <div class="Board">
+      <div class="Kalaha-left Pit">{{boardState[0].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[13]);">{{boardState[13].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[12]);">{{boardState[12].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[11]);">{{boardState[11].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[10]);">{{boardState[10].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[9]);">{{boardState[9].rocks}}</div>
+      <div class="Pit P2" [class.Valid]="playerTurn == 'p2'"
+           [class.nonActivePlayerIndicator]="playerTurn == ('p1' || undefined)"
+           (click)="pitSelection(boardState[8]);">{{boardState[8].rocks}}</div>
+      <div class="Kalaha-right Pit">{{boardState[7].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[1]);">{{boardState[1].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[2]);">{{boardState[2].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[3]);">{{boardState[3].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[4]);">{{boardState[4].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[5]);">{{boardState[5].rocks}}</div>
+      <div class="Pit P1" [class.Valid]="playerTurn == 'p1'"
+           [class.nonActivePlayerIndicator]="playerTurn == 'p2'|| undefined"
+           (click)="pitSelection(boardState[6]);">{{boardState[6].rocks}}</div>
+    </div>
+
+    <div class="players-one">
+      <div class="UI-Element Player1Score Player P1">
+        <span [class.activePlayerIndicator]="playerTurn == 'p1'"
+              style="padding-left: 40px;padding-right: 40px">Player 1</span></div>
+      <div>score: {{p1ScoreNumber}}</div>
+    </div>
+
+    <div class="Log">
+    </div>
+
+  </div>
+
+</main>
